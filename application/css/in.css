@@ -1,0 +1,8 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+.bi{
+	background-image:url("..//img/back.jpg");
+	background-size:cover;
+}
