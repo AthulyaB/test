@@ -3,11 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mainnn extends CI_Controller
  {
- 	public function newreg()
+	//Registration View page
+	public function newreg()
  	{
  		$this->load->view('newreg');
 
  	}
+	//Insert User Details
  	public function newregist()
 	{
 		$this->load->library('form_validation');
@@ -35,6 +37,7 @@ class Mainnn extends CI_Controller
 				redirect (base_url().'Mainnn/newreg');
         }
 	}
+	//View User Details
 	public function approve()
 	{
 
@@ -42,6 +45,7 @@ class Mainnn extends CI_Controller
 		$data['n']=$this->mainnnmodel->approve();
 		$this->load->view('regview',$data);
 	}
+	//Approve Details
 	public function approvedetails()
 	{
 		$this->load->model('mainnnmodel');
@@ -49,6 +53,7 @@ class Mainnn extends CI_Controller
 		$this->mainnnmodel->approvedetails($id);
 		redirect('Mainnn/approve','refresh');
 	}
+	//Reject Details
 	public function rejectdetails()
 	{
 		$this->load->model('mainnnmodel');
@@ -56,11 +61,13 @@ class Mainnn extends CI_Controller
 		$this->mainnnmodel->rejectdetails($id);
 		redirect('Mainnn/approve','refresh');
 	}
+	//Login View
 	public function log()
  	{
  		$this->load->view('log');
 
  	}
+	//Main Login
  	public function logg()
     {
     	$this->load->library('form_validation');
